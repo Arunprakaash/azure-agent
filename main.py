@@ -11,6 +11,7 @@ def print_stream(stream):
 
 
 config = {"configurable": {"thread_id": "1"}}
-inputs = {"messages": [("user", "create a virtual machine")]}
-
-print_stream(graph.stream(inputs, config=config, stream_mode="values"))
+while True:
+    query = input("query- ")
+    inputs = {"messages": [("user", query)]}
+    print_stream(graph.stream(inputs, config=config, stream_mode="values"))

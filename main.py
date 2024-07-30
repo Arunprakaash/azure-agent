@@ -10,8 +10,9 @@ def print_stream(stream):
             message.pretty_print()
 
 
-config = {"configurable": {"thread_id": "1"}}
+# config = {"configurable": {"thread_id": "1"}}
 while True:
     query = input("query- ")
     inputs = {"messages": [("user", query)]}
-    print_stream(graph.stream(inputs, config=config, stream_mode="values"))
+    response = graph.invoke(inputs)
+    print(response)
